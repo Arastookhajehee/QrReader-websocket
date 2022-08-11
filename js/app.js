@@ -131,7 +131,7 @@ SQR.modal = (() => {
         SQR.reader.findQR()
     }
 
-    send.addEventListener('click',SendInfoToServer)
+    send.addEventListener('click', () => SendInfoToServer())
 
     copyBtn.addEventListener('click', copyResultText)
 
