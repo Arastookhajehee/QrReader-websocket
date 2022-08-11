@@ -126,6 +126,13 @@ SQR.modal = (() => {
         document.execCommand('copy')
     }
 
+    const SendInfoToServer = () => {
+        modal.classList.remove('is-show')
+        SQR.reader.findQR()
+    }
+
+    send.addEventListener('click',SendInfoToServer)
+
     copyBtn.addEventListener('click', copyResultText)
 
     modalClose.addEventListener('click', () => close())
