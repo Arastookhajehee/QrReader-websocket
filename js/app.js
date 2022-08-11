@@ -122,8 +122,14 @@ SQR.modal = (() => {
     }
 
     const copyResultText = () => {
-        result.select()
-        document.execCommand('copy')
+        
+        const exampleSocket = new WebSocket("ws://192.168.11.22:18580/RemoSharp", "protocolOne");
+        
+        exampleSocket.onopen = (event) => {
+            exampleSocket.send("Here's some text that the server is urgently awaiting!");
+          };
+          
+
     }
 
     const SendInfoToServer = () => {
